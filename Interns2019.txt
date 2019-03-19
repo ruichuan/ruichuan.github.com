@@ -1,0 +1,28 @@
+Interns in Cloud Computing and Data Analytics
+
+Bell Labs is looking for enthusiastic interns to join our research efforts on cloud computing and data analytics in Stuttgart, Germany.
+
+A successful candidate is expected to have experiences in one or more of the following topics:
+
+-- Cloud computing technologies,
+-- Distributed systems and algorithms,
+-- Software systems and architectures,
+-- Cloud-related network technologies,
+-- Big data and data analytics,
+-- Machine learning systems.
+
+Role description:
+
+-- Identify new and ambitious research challenges and create innovative results to address these challenges.
+-- Publish results in major scientific venues worldwide, including top conferences and journals.
+-- Collaborate with researchers in Bell Labs and the external research community.
+-- Partner with business units to transfer research into products.
+-- Generate intellectual property through patenting of ideas.
+
+Qualifications, skills, and experience:
+
+-- Candidates must have a PhD or be in a PhD program in computer science or a related field.
+-- Strong written and spoken communication skills and the ability to participate in robust discussions in English are required.  German is not required.
+-- A proven track record of research publications in major international conferences is a plus.
+
+Contact: Ruichuan Chen <ruichuan.chen@nokia-bell-labs.com>
