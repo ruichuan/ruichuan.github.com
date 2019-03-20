@@ -24,5 +24,6 @@ Qualifications, skills, and experience:
 -- Candidates must have a PhD or be in a PhD program in computer science or a related field.
 -- Strong written and spoken communication skills and the ability to participate in robust discussions in English are required.  German is not required.
 -- A proven track record of research publications in major international conferences is a plus.
+-- Duration: 3-4 months (start date is flexible).
 
 Contact: Ruichuan Chen <ruichuan.chen@nokia-bell-labs.com>
