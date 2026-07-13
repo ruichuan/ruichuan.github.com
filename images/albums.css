@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* Color Variables */
+:root {
+  --bg-dark: #070913;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --bg-card-hover: rgba(255, 255, 255, 0.05);
+  --border-card: rgba(255, 255, 255, 0.06);
+  --border-card-hover: rgba(255, 255, 255, 0.15);
+  
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  
+  --color-accent-purple: #8b5cf6;
+  --color-accent-indigo: #6366f1;
+  --color-accent-cyan: #06b6d4;
+  
+  --accent-gradient: linear-gradient(135deg, var(--color-accent-purple), var(--color-accent-indigo));
+  --accent-gradient-hover: linear-gradient(135deg, var(--color-accent-indigo), var(--color-accent-cyan));
+  
+  --glow-shadow: 0 10px 30px -15px rgba(99, 102, 241, 0.3);
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 10px 30px rgba(99, 102, 241, 0.15);
+}
+
+/* Global resets & style */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout container */
+#wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Header & Logo styling */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7, 9, 19, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo-text a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.3s;
+}
+
+#logo-text a:hover {
+  opacity: 0.85;
+}
+
+/* Year Section Header Styling */
+#main h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #ffffff, var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#main h2::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+}
+
+/* Album lists styling */
+#main ul:not(.travelogue-list) {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+#main ul:not(.travelogue-list) li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 0.85rem 1.25rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  gap: 1rem;
+  
+  /* Muted text style for the date node inside li */
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Glowing line effect on hover */
+#main ul:not(.travelogue-list) li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent-gradient);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#main ul:not(.travelogue-list) li:hover {
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+  border-color: var(--border-card-hover);
+  box-shadow: var(--card-shadow-hover);
+}
+
+#main ul:not(.travelogue-list) li:hover::before {
+  opacity: 1;
+}
+
+/* Album Link Styling */
+#main ul:not(.travelogue-list) li a {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  transition: color 0.2s;
+}
+
+/* Camera icon before the link */
+#main ul:not(.travelogue-list) li a::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236366f1' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z' /%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z' /%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+#main ul:not(.travelogue-list) li:hover a::before {
+  transform: rotate(-10deg) scale(1.15);
+}
+
+#main ul:not(.travelogue-list) li:hover a {
+  color: var(--color-accent-cyan);
+}
+
+/* Travelogue section styling */
+.travelogue-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.travelogue-list li {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: var(--card-shadow);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.travelogue-list li:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: var(--bg-card-hover);
+}
+
+.travelogue-list li a {
+  color: var(--color-accent-indigo);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+  border-bottom: 1px dashed rgba(99, 102, 241, 0.4);
+}
+
+.travelogue-list li a:hover {
+  color: var(--color-accent-cyan);
+  border-bottom-color: var(--color-accent-cyan);
+}
+
+/* Footer Styling */
+#footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+#footer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+#footer b {
+  color: var(--text-secondary);
+}
+
+/* Responsive adjustment */
+@media (max-width: 640px) {
+  #wrap {
+    padding: 1rem 1rem 3rem;
+  }
+  
+  #header {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
+  
+  #logo-text a {
+    font-size: 1.25rem;
+  }
+  
+  #main h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  
+  #main ul:not(.travelogue-list) li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
